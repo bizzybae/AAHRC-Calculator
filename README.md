@@ -204,7 +204,7 @@ If you use this tool in your research, please cite:
 
 ```bibtex
 @software{aahrc2025,
-  author = {[Your Name]},
+  author = {Quddarat Mushtaq, MD},
   title = {AAHRC-Calculator: Albuminuria-Adjusted Hypertension Risk Calculator},
   year = {2025},
   url = {https://github.com/bizzybae/AAHRC-Calculator}
@@ -214,7 +214,7 @@ If you use this tool in your research, please cite:
 ## 🎯 Project Milestones
 
 - [x] Repository creation and initial setup
-- [ ] Week 1: Environment setup and literature review
+- [x] Week 1: Environment setup and literature review
 - [ ] Week 4: NHANES data processing complete
 - [ ] Week 12: Statistical models developed and validated
 - [ ] Week 16: Web calculator deployed
@@ -224,4 +224,4 @@ If you use this tool in your research, please cite:
 
 **Status**: 🚧 Active Development  
 **Last Updated**: December 9, 2025  
-**Version**: 0.1.0 (Initial Setup)
+**Version**: 0.2.0 (Setup)
