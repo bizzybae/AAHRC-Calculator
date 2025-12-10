@@ -6,6 +6,22 @@ A comprehensive tool for personalizing blood pressure targets by kidney function
 
 ## 🎯 Project Overview
 
+### Executive Summary
+This project develops the **Albuminuria-Adjusted Hypertension Risk Calculator (AAHRC)**, a novel clinical decision support tool that personalizes blood pressure management based on kidney function. Just as BMI adjusts weight interpretation based on height, AAHRC adjusts blood pressure interpretation based on albuminuria.
+
+### The Clinical Problem
+- Only **4.1%** of hypertensive patients are screened for albuminuria
+- **40%** of untreated hypertensive patients have undetected albuminuria
+- Current guidelines provide one-size-fits-all BP targets
+- Two patients with identical BP (145/90) but different uACR (10 vs 250 mg/g) receive the same diagnosis despite different cardiovascular risk
+
+### The Solution
+AAHRC creates 4 distinct phenotypes:
+1. **Normal BP + Normal Albuminuria** → True normotension (lowest risk)
+2. **Elevated BP + Normal Albuminuria** → Isolated BP elevation (intermediate risk)
+3. **Normal BP + Elevated Albuminuria** → Occult hypertension (high risk, often missed)
+4. **Elevated BP + Elevated Albuminuria** → True hypertension with organ damage (highest risk)
+
 ### Why Albuminuria Matters
 
 Albuminuria (elevated urinary albumin excretion) is a powerful predictor of cardiovascular events, independent of traditional risk factors. Research demonstrates that:
@@ -56,22 +72,6 @@ The calculator integrates established cardiovascular risk assessment frameworks:
 The **AAHRC-Calculator** addresses a crucial clinical gap in cardiovascular risk assessment. Traditional **blood pressure–only** approaches may **under-recognize patients at high risk** due to underlying kidney damage, particularly those with elevated **urine albumin-to-creatinine ratio (uACR)**. Incorporating uACR into risk stratification is scientifically supported, as albuminuria is a well-established and independent predictor of cardiovascular events.
 
 As a **prototype and research-focused tool**, the AAHRC-Calculator provides value by enabling exploration of key hypotheses and population-level patterns. It allows users to visualize how cardiovascular risk shifts when patients are **reclassified by albuminuria levels**, helping identify individuals who may benefit from **more aggressive blood pressure management** or **kidney-protective interventions**. This makes it a useful starting point for research, quality improvement, or hypothesis generation in hypertension and chronic kidney disease care.
-
-### Executive Summary
-This project develops the **Albuminuria-Adjusted Hypertension Risk Calculator (AAHRC)**, a novel clinical decision support tool that personalizes blood pressure management based on kidney function. Just as BMI adjusts weight interpretation based on height, AAHRC adjusts blood pressure interpretation based on albuminuria.
-
-### The Clinical Problem
-- Only **4.1%** of hypertensive patients are screened for albuminuria
-- **40%** of untreated hypertensive patients have undetected albuminuria
-- Current guidelines provide one-size-fits-all BP targets
-- Two patients with identical BP (145/90) but different uACR (10 vs 250 mg/g) receive the same diagnosis despite different cardiovascular risk
-
-### The Solution
-AAHRC creates 4 distinct phenotypes:
-1. **Normal BP + Normal Albuminuria** → True normotension (lowest risk)
-2. **Elevated BP + Normal Albuminuria** → Isolated BP elevation (intermediate risk)
-3. **Normal BP + Elevated Albuminuria** → Occult hypertension (high risk, often missed)
-4. **Elevated BP + Elevated Albuminuria** → True hypertension with organ damage (highest risk)
 
 ## 🎯 Key Features
 
