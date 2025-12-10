@@ -218,12 +218,21 @@ If you use this tool in your research, please cite:
 
 ## 🎯 Project Milestones
 
-- [x] Repository creation and initial setup
-- [x] Week 1: Environment setup and literature review
-- [ ] Week 4: NHANES data processing complete
-- [ ] Week 12: Statistical models developed and validated
-- [ ] Week 16: Web calculator deployed
-- [ ] Week 24: Manuscript submitted for publication
+| Milestone | Target Date / Phase | Description / Deliverables |
+|---|---|---|
+| **Phase 0 — Repository Setup & Infrastructure** | ● Done | Repository created; Python environment configured; basic folder structure established. |
+| **Phase 1 — Data Acquisition & Preliminary Analysis** | Weeks 1–4 (initial plan) | Download and process primary dataset (e.g. NHANES), perform exploratory data analysis, compile literature review, assess data quality. |
+| **Phase 1b — Data Quality & Pre-processing Review** | Month 2 | Define data-quality standards, implement data cleaning pipelines, document exclusion criteria, run sanity checks on processed data. |
+| **Phase 2 — Statistical Modeling & Internal Validation** | Weeks 5–12 (expanded) | Develop candidate risk-prediction formulas (categorical, ratio-based, regression-based), fit survival/Cox models (or appropriate models), perform internal validation (e.g. cross-validation, bootstrapping), compare model performance. |
+| **Phase 2b — Sensitivity Analyses & Subgroup Exploration** | Month 4 | Conduct subgroup analyses (e.g. by age, sex, baseline uACR categories), test robustness to alternative model specifications, examine effect of measurement variability (e.g. BP, uACR). |
+| **Phase 2c — Calibration & Risk-Recalibration** | Month 5 | Assess calibration (e.g. calibration plots, calibration-in-the-large), adjust model if needed, document calibration performance. |
+| **Phase 3 — External Validation** | Month 6–8 | Identify and import external datasets (e.g. other cohort(s) with BP + uACR + outcomes), apply model, assess discrimination & calibration on external data, document performance. |
+| **Phase 4 — Web Calculator Development & Deployment** | Weeks 13–16 (initial plan) → Revised: Month 7–9 | Build and polish frontend & backend (e.g. Flask), integrate risk-prediction model, build UI/UX for users, add risk visualization tools, perform user testing & QA, deploy to cloud or hosting platform. |
+| **Phase 5 — Documentation & User Guide Release** | Month 9 | Write comprehensive documentation: quick-start guide, algorithmic description, user instructions, data & versioning notes; release user-friendly documentation site; add usage examples. |
+| **Phase 6 — Publication & Dissemination** | Month 10–12 | Prepare manuscript describing development, validation, limitations; submit to peer-reviewed journal or preprint server; draft conference abstract/ poster; outreach to clinical/research community. |
+| **Phase 7 — Prospective / Longitudinal Validation Planning** | After successful external validation & publication | Design prospective validation study or registry-based study; draft protocol; seek collaborators; pre-register analysis plan. |
+| **Phase 8 — Maintenance, Versioning & Community Engagement** | Ongoing | Version releases, issue/bug tracking, community feedback integration, periodic re-validation as new data emerge, update dependencies, ensure documentation remains current. |
+| **Phase 9 — Feature Expansion & Extensions** | Longer-term / Future | Explore inclusion of additional predictors (e.g. comorbidities, lab values), adapt to different populations, support alternative endpoints (CKD progression, renal outcomes), build API or package for easy integration. |
 
 ---
 
