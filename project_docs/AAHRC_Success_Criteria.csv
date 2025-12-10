@@ -1,0 +1,11 @@
+Week,Criterion,Target,Method
+4,NHANES data merged & explored,"14,919 records",Data validation report
+4,AABPI categories created,All 4 categories with ≥100 patients each,Distribution table
+8,Three AABPI formulas developed,"Categorical, Ratio, Regression models",Model comparison table
+12,Best model selected,C-statistic documented,Performance report
+12,Reclassification analysis,30-40% Category 3 identified,Reclassification matrix
+16,Web calculator live,Publicly accessible URL,Live app link
+16,QA testing completed,95% test pass rate,QA report
+20,Manuscript submitted,Journal confirmed receipt,Submission confirmation
+20,Conference abstracts submitted,AHA + ASN submissions,Confirmation emails
+24,Project complete,All phases delivered,Final report

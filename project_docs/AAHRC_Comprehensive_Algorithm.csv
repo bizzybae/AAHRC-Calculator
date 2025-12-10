@@ -1,0 +1,480 @@
+Phase,Week,Step,Type,Duration,Tools,Deliverables,Description
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.1 Environment Setup,MAIN TASK,2-3 hours,"GitHub, Python, Conda/pip",GitHub repo link; Installed environment verification,1.1 Environment Setup
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.1 Environment Setup,SUBTASK,,,,1.1.1 Create GitHub repository (AAHRC-Calculator)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.1 Environment Setup,SUBTASK,,,,1.1.2 Install Python 3.10+ with conda/pip
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.1 Environment Setup,SUBTASK,,,,1.1.3 Set up virtual environment (venv or conda)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.1 Environment Setup,SUBTASK,,,,"1.1.4 Install core packages: pandas, numpy, scikit-learn, lifelines, matplotlib, seaborn"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.1 Environment Setup,SUBTASK,,,,"1.1.5 Create folder structure: /data, /analysis, /models, /notebooks, /results, /app"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.1 Environment Setup,SUBTASK,,,,"1.1.6 Initialize .gitignore (include /data, /models, .DS_Store)"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.2 Literature Review (Rapid),MAIN TASK,4-5 hours,"PubMed, Google Scholar",Key statistics summary spreadsheet; Risk estimates table,1.2 Literature Review (Rapid)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.2 Literature Review (Rapid),SUBTASK,,,,1.2.1 Review 5-7 key BP-albuminuria papers (already summarized in proposal)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.2 Literature Review (Rapid),SUBTASK,,,,"1.2.2 Extract key statistics: risk ratios, C-statistics, prevalence data"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.2 Literature Review (Rapid),SUBTASK,,,,1.2.3 Document baseline risk estimates for CVD by category
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1,1.2 Literature Review (Rapid),SUBTASK,,,,1.2.4 Identify any published AABPI or similar scores
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,MAIN TASK,3-4 hours,"Python (pandas, pyreadstat), R (haven)",merged_nhanes_2017_2020.csv; Data dictionary (300-400 rows),1.3 Download & Explore NHANES Data
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,SUBTASK,,,,1.3.1 Go to CDC NHANES website (wwwn.cdc.gov/nchs/nhanes/)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,SUBTASK,,,,1.3.2 Download 2017-2020 cycle data:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,SUBTASK,,,,"       - ALB_CR_H.XPT (albuminuria, ~14,919 records)"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,SUBTASK,,,,       - BPX_H.XPT (blood pressure)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,SUBTASK,,,,       - DEMO_H.XPT (demographics)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,SUBTASK,,,,1.3.3 Merge datasets on SEQN (sequence number)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.3 Download & Explore NHANES Data,SUBTASK,,,,1.3.4 Convert from SAS/STATA format to CSV using Python/R
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),MAIN TASK,4-5 hours,"Python (pandas, seaborn, matplotlib)",EDA_Report.html (with summary tables & histograms); Missing_Data_Analysis.csv,1.4 Initial Data Exploration (EDA)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,1.4.1 Load data into Python/R
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,"1.4.2 Check sample size: Should be ~14,919 with BP + uACR data"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,"1.4.3 Descriptive statistics: mean, SD, min, max for:"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,       - Age (RIDAGEYR): expect 18-80 years
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,"       - SBP (SBPX1, SBPX2, SBPX3): expect 90-240 mmHg"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,"       - DBP (DBPX1, DBPX2, DBPX3): expect 40-150 mmHg"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,       - uACR (UALBUMC): expect 0-5000 mg/g
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,1.4.4 Check missing data patterns (% missing for each)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.4 Initial Data Exploration (EDA),SUBTASK,,,,1.4.5 Identify outliers/implausible values
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,MAIN TASK,3-4 hours,Python (pandas),nhanes_cleaned.csv (final analytic file); Data_Cleaning_Log.txt,1.5 Data Cleaning & Preprocessing
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,1.5.1 Handle missing data:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,"       - Drop rows with missing SBP, DBP, or uACR (main variables)"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,"       - For secondary variables, use median/mode imputation or flag"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,1.5.2 Create summary BP variable:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,       - Average of 3 readings: SBP_avg = (SBPX1 + SBPX2 + SBPX3) / 3
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,       - Use most recent reading if not all 3 available
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,1.5.3 Create uACR categories:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,       - Normal: <30 mg/g (reference)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,       - Microalbuminuria: 30-300 mg/g
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,       - Macroalbuminuria: ≥300 mg/g
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,1.5.4 Create SBP categories:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,       - Normal: <130 mmHg
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,       - Elevated: ≥130 mmHg
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,"1.5.5 Remove outliers: SBP <70 or >280, DBP <40 or >160"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),2,1.5 Data Cleaning & Preprocessing,SUBTASK,,,,1.5.6 Filter age ≥18 years
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,MAIN TASK,2-3 hours,"Python (pandas, matplotlib)",AABPI_Categories.csv; Category_Distribution_Plot.png,1.6 Create AABPI Categories
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,1.6.1 Create 2×2 classification:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,       Category 1: SBP <130 + uACR <30 → 'Normotension'
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,       Category 2: SBP ≥130 + uACR <30 → 'Isolated BP Elevation'
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,       Category 3: SBP <130 + uACR ≥30 → 'Occult Hypertension'
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,       Category 4: SBP ≥130 + uACR ≥30 → 'True HTN + HMOD'
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,1.6.2 Count patients in each category
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,1.6.3 Calculate % in each category
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.6 Create AABPI Categories,SUBTASK,,,,1.6.4 Create visualization (2×2 heatmap with counts)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,MAIN TASK,3-4 hours,"Python (pandas, scipy.stats)",Table1_BaselineCharacteristics.csv; Statistical_Tests.txt,1.7 Descriptive Analysis by Category
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,1.7.1 Create Table 1: Baseline characteristics by AABPI category
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,"       - Age, sex, race/ethnicity"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,"       - SBP, DBP, uACR (mean ± SD)"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,"       - BMI, eGFR (if available)"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,       - Hypertension prevalence (self-reported + BP)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,       - Diabetes prevalence
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,1.7.2 Use pandas.groupby() to calculate
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,"1.7.3 Run statistical tests (ANOVA, Kruskal-Wallis) comparing categories"
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),3,1.7 Descriptive Analysis by Category,SUBTASK,,,,1.7.4 Format table for publication
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,MAIN TASK,1-2 hours,Web browser,Data request confirmation email; SPRINT Data Use Agreement (signed),1.8 Submit SPRINT Data Request
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,1.8.1 Go to NIH BioLINCC (biolincc.nhlbi.nih.gov)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,1.8.2 Register for account if needed
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,1.8.3 Search for SPRINT trial
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,1.8.4 Complete data request form:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,       - Research project title
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,       - Data use justification
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,       - Agree to data use agreement
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.8 Submit SPRINT Data Request,SUBTASK,,,,1.8.5 Submit request (expect email in 2-4 weeks with download link)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),MAIN TASK,2-3 hours,"Web browser, Word/Google Docs",UK Biobank Application confirmation; Project proposal (saved),1.9 Apply for UK Biobank Access (Optional)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,1.9.1 Go to UK Biobank application portal
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,1.9.2 Create account with institutional email
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,1.9.3 Write project proposal (1-2 pages):
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,       - Research question
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,       - Methods
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,       - Sample size
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,       - Expected impact
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.9 Apply for UK Biobank Access (Optional),SUBTASK,,,,1.9.4 Submit application (expect review in 4-8 weeks)
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,MAIN TASK,1-2 hours,"GitHub, Markdown",README.md; CHANGELOG.md; GitHub commits,1.10 Weekly Check-in & Documentation
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,1.10.1 Commit all code to GitHub with descriptive messages
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,1.10.2 Create README.md documenting:
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,       - Project overview
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,       - Data sources and access instructions
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,       - File structure
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,       - How to run analyses
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,1.10.3 Create CHANGELOG.md documenting Week 1-4 progress
+PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),4,1.10 Weekly Check-in & Documentation,SUBTASK,,,,1.10.4 Document any blockers or next steps
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,MAIN TASK,3-4 hours,"Python (pandas, numpy)",nhanes_with_outcomes.csv; Risk_Calculation_Methodology.txt,2.1 Simulate CVD Outcomes for NHANES
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,"2.1.1 Since NHANES cross-sectional, simulate outcomes based on published risk"
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,2.1.2 Use baseline CVD risk by age/category from literature:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,       - Age 45: baseline risk ~3-5%
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,       - Age 65: baseline risk ~8-12%
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,2.1.3 Calculate 10-year CVD risk by AABPI category:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,       Category 1: 1.0× baseline (reference)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,       Category 2: 1.5× baseline
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,       Category 3: 2.5× baseline
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,       Category 4: 4.0× baseline (from literature)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,2.1.4 Create binary 10-year MACE outcome variable
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.1 Simulate CVD Outcomes for NHANES,SUBTASK,,,,2.1.5 Save as 'nhanes_with_outcomes.csv'
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.2 Develop Categorical AABPI (Formula 1),MAIN TASK,3-4 hours,"Python (scikit-learn, statsmodels)",Formula1_Categorical_Results.csv; Formula1_Model.pkl,2.2 Develop Categorical AABPI (Formula 1)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.2 Develop Categorical AABPI (Formula 1),SUBTASK,,,,2.2.1 Create 2×2 categories as defined above
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.2 Develop Categorical AABPI (Formula 1),SUBTASK,,,,2.2.2 Assign scores 1-4
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.2 Develop Categorical AABPI (Formula 1),SUBTASK,,,,2.2.3 Logistic regression: AABPI category predicting 10-year CVD risk
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.2 Develop Categorical AABPI (Formula 1),SUBTASK,,,,2.2.4 Calculate odds ratios (OR) and 95% CI for each category vs. reference
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.2 Develop Categorical AABPI (Formula 1),SUBTASK,,,,2.2.5 Calculate C-statistic (AUC) for discrimination
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.2 Develop Categorical AABPI (Formula 1),SUBTASK,,,,2.2.6 Save model coefficients
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.3 Develop Ratio Method AABPI (Formula 2),MAIN TASK,3-4 hours,"Python (scikit-learn, matplotlib)",Formula2_Ratio_Results.csv; Formula2_Comparison.png,2.3 Develop Ratio Method AABPI (Formula 2)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.3 Develop Ratio Method AABPI (Formula 2),SUBTASK,,,,2.3.1 Calculate AABPI_ratio = SBP / (1 + uACR/100)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.3 Develop Ratio Method AABPI (Formula 2),SUBTASK,,,,2.3.2 Linear regression with continuous outcome: CVD risk ~ AABPI_ratio
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.3 Develop Ratio Method AABPI (Formula 2),SUBTASK,,,,2.3.3 Calculate C-statistic for this model
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.3 Develop Ratio Method AABPI (Formula 2),SUBTASK,,,,2.3.4 Compare to Formula 1 (categorical)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),5,2.3 Develop Ratio Method AABPI (Formula 2),SUBTASK,,,,2.3.5 Create visualization: AABPI_ratio vs. CVD risk (scatter + trend)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),MAIN TASK,4-5 hours,"Python (statsmodels, matplotlib)",Formula3_Regression_Coefficients.csv; Formula3_Interaction_Plot.png,2.4 Develop Regression-Based AABPI (Formula 3)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),SUBTASK,,,,2.4.1 Logistic regression with multiple terms:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),SUBTASK,,,,       AABPI_score = β0 + β1×SBP + β2×log(uACR) + β3×age + β4×female + β5×SBP×log(uACR)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),SUBTASK,,,,2.4.2 Fit on NHANES data
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),SUBTASK,,,,2.4.3 Extract coefficients
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),SUBTASK,,,,2.4.4 Calculate predicted risk for each patient
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),SUBTASK,,,,2.4.5 Calculate C-statistic
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.4 Develop Regression-Based AABPI (Formula 3),SUBTASK,,,,2.4.6 Create interaction plot: SBP and uACR effect on risk
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,MAIN TASK,4-5 hours,Python (sklearn.metrics),Formula_Comparison_Table.csv; ROC_Curves.png; NRI_IDI_Results.txt,2.5 Compare Three AABPI Formulas
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,2.5.1 Create comparison table:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,       - C-statistic for each
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,       - Sensitivity/Specificity at various thresholds
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,       - Calibration (expected vs. observed risk)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,2.5.2 Calculate Net Reclassification Improvement (NRI) vs. BP-only
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,2.5.3 Calculate Integrated Discrimination Improvement (IDI)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,2.5.4 Create ROC curves for each formula
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),6,2.5 Compare Three AABPI Formulas,SUBTASK,,,,2.5.5 Create summary comparison table
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,MAIN TASK,2-3 hours,Python (pandas),SPRINT_Data_Dictionary.csv; SPRINT_Ready_for_Analysis.txt (or 'Pending'),2.6 Prepare for SPRINT Data Integration
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,2.6.1 Check SPRINT data download status (BioLINCC)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,"2.6.2 If available, download and extract SPRINT data"
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,2.6.3 Create SPRINT data dictionary (map variables to NHANES equivalents)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,2.6.4 Key SPRINT variables needed:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,       - SBPCLINLST (systolic BP)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,       - ALBCRELST (albumin-creatinine ratio) if available
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,"       - MACE outcome variables (MI, stroke, HF, death)"
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.6 Prepare for SPRINT Data Integration,SUBTASK,,,,"       - Demographics (age, sex, race)"
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),MAIN TASK,5-6 hours (if SPRINT data available),Python (lifelines),SPRINT_KM_Curves.png; SPRINT_Cox_Results.csv,2.7 Analyze SPRINT Data (if available)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),SUBTASK,,,,2.7.1 SPRINT has albuminuria baseline data (key advantage)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),SUBTASK,,,,2.7.2 Stratify by AABPI category:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),SUBTASK,,,,       - Count patients in each category
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),SUBTASK,,,,       - Compare baseline characteristics
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),SUBTASK,,,,2.7.3 Create Kaplan-Meier curves by AABPI category
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),SUBTASK,,,,2.7.4 Cox proportional hazards model for MACE outcome
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),7,2.7 Analyze SPRINT Data (if available),SUBTASK,,,,2.7.5 Test treatment (intensive vs. standard) × AABPI interaction
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,MAIN TASK,5-6 hours,"Python (matplotlib, pandas)",Subgroup_Analysis_Table.csv; Forest_Plot_Subgroups.png,2.8 Sensitivity & Subgroup Analyses
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,2.8.1 Subgroup 1: By age (<60 vs. ≥60)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,       - Recalculate AABPI performance in each
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,       - Test age interaction
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,2.8.2 Subgroup 2: By sex (male vs. female)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,       - Sex-specific risk models
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,       - Test sex interaction
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,2.8.3 Subgroup 3: By diabetes status (yes vs. no)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,       - Separate analyses in diabetic/non-diabetic subgroups
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,2.8.4 Create subgroup results table
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),8,2.8 Sensitivity & Subgroup Analyses,SUBTASK,,,,2.8.5 Create forest plot of HRs by subgroup
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,MAIN TASK,4-5 hours,"Python (matplotlib, plotly)",Risk_Surface_Plot.png; Traffic_Light_Visualization.png; Patient_Card_Examples.png,2.9 Risk Visualization & Heat Maps
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,2.9.1 Create 2D risk surface: SBP (x-axis) vs. uACR (y-axis) → CVD risk (color)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,2.9.2 Create contour plot with risk zones
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,2.9.3 Create 'traffic light' visualization:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,       - Red zone: SBP ≥140 + uACR ≥300 (high risk)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,       - Yellow zone: Intermediate risk combinations
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,       - Green zone: SBP <120 + uACR <30 (low risk)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,2.9.4 Create example patient cards showing AABPI + risk
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),9,2.9 Risk Visualization & Heat Maps,SUBTASK,,,,2.9.5 Create clinical decision support mockup visualization
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),MAIN TASK,4-5 hours,"Python (requests, pandas)",PREVENT_Comparison.csv; PREVENT_vs_AABPI_Comparison.png; NRI_vs_PREVENT.txt,2.10 Compare to Existing Tools (PREVENT)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),SUBTASK,,,,2.10.1 Download PREVENT calculator (or use API if available)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),SUBTASK,,,,2.10.2 Calculate PREVENT risk for NHANES patients:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),SUBTASK,,,,       - With uACR included
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),SUBTASK,,,,       - Without uACR
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),SUBTASK,,,,2.10.3 Compare C-statistics: AABPI vs. PREVENT
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),SUBTASK,,,,2.10.4 Calculate reclassification (NRI) between tools
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),10,2.10 Compare to Existing Tools (PREVENT),SUBTASK,,,,2.10.5 Create comparison visualization: AABPI risk vs. PREVENT risk (scatter)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,MAIN TASK,3-4 hours,Python (pandas),Reclassification_Matrix.csv; Reclassification_Analysis.txt,2.11 Create Reclassification Analysis Table
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,2.11.1 Define three risk categories:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,       - Low: <10% 10-year risk
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,       - Intermediate: 10-20% risk
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,       - High: ≥20% risk
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,2.11.2 Create 2D reclassification table:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,       - Rows: BP-only risk classification
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,       - Columns: AABPI risk classification
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,       - Cells: # patients moving between categories
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,2.11.3 Identify key reclassification patterns
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,2.11.4 Identify what % with 'normal' BP have high uACR (Category 3)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),11,2.11 Create Reclassification Analysis Table,SUBTASK,,,,2.11.5 Identify what % with 'elevated' BP have normal uACR (Category 2)
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,MAIN TASK,3-4 hours,"Python, Markdown",Final_Model_Selection_Rationale.txt; Model_Coefficients_Final.csv; Modeling_Report.md,2.12 Final Model Selection & Documentation
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,2.12.1 Select best-performing AABPI formula based on:
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,       - Highest C-statistic
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,       - Clinical interpretability
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,       - Ease of implementation
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,2.12.2 Likely winner: Categorical (Formula 1) for simplicity + Regression (Formula 3) for sophistication
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,2.12.3 Document model assumptions & limitations
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,2.12.4 Save final model coefficients
+PHASE 2: STATISTICAL MODELING (Weeks 5-12),12,2.12 Final Model Selection & Documentation,SUBTASK,,,,2.12.5 Create comprehensive modeling report (10-15 pages)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),MAIN TASK,3-4 hours,"Figma, paper & pen, or Excalidraw",Calculator_Wireframe.png/pdf; Style_Guide.md,3.1 Design Calculator Interface (Mockup)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),SUBTASK,,,,3.1.1 Create wireframe sketches (paper or Figma):
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),SUBTASK,,,,"       - Input section: age, sex, SBP, uACR, eGFR (optional)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),SUBTASK,,,,"       - Output section: AABPI category, 10-yr CVD risk, BP target, recommendations"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),SUBTASK,,,,3.1.2 Design 'traffic light' risk visualization
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),SUBTASK,,,,3.1.3 Design mobile-responsive layout
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),SUBTASK,,,,3.1.4 Plan user flow & error handling
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.1 Design Calculator Interface (Mockup),SUBTASK,,,,"3.1.5 Create style guide (colors, fonts, spacing)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),MAIN TASK,5-6 hours,"Python, Flask, pytest",app.py; models.py; utils.py; Backend_Tests.py,3.2 Build Backend (Flask/Python)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,3.2.1 Create Flask app structure:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,       - app.py (main app)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,       - models.py (AABPI calculation functions)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,       - utils.py (helper functions)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,3.2.2 Create AABPI calculation function:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,"def calculate_aabpi(age, sbp, uacr, sex, egfr=None):"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,    # Return category (1-4)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,    # Return 10-yr CVD risk %
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,    # Return BP target recommendations
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,    # Return medication recommendations
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,3.2.3 Create risk stratification function
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,3.2.4 Create recommendation generator function
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,3.2.5 Add error handling & input validation
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.2 Build Backend (Flask/Python),SUBTASK,,,,3.2.6 Test locally with example inputs
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),MAIN TASK,5-6 hours,"HTML, CSS, JavaScript, Bootstrap (optional)",index.html; about.html; results.html; style.css; script.js,3.3 Build Frontend (HTML/CSS/JavaScript)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,3.3.1 Create HTML structure (templates/):
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - index.html (main calculator page)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - about.html (info & disclaimers)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - results.html (results display)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,3.3.2 Create CSS styling (static/style.css):
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,"       - Professional, clean design"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - Traffic light color scheme (red/yellow/green)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - Responsive grid layout
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,3.3.3 Create JavaScript for interactivity (static/script.js):
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - Real-time input validation
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - AJAX call to backend on form submission
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - Animate risk visualization
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),13,3.3 Build Frontend (HTML/CSS/JavaScript),SUBTASK,,,,       - Print results function
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,MAIN TASK,4-5 hours,"Flask, JavaScript, Browser DevTools",Working Local App; Integration_Test_Log.txt,3.4 Integrate Backend & Frontend
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,3.4.1 Create Flask route for calculator:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,"@app.route('/calculate', methods=['POST'])"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,def calculate():
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,    data = request.json
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,    results = calculate_aabpi(...)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,    return jsonify(results)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,3.4.2 Test form submission with browser console
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,3.4.3 Debug JavaScript-to-Python communication
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,3.4.4 Ensure results display correctly
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.4 Integrate Backend & Frontend,SUBTASK,,,,"3.4.5 Test error handling (invalid inputs, missing fields)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,MAIN TASK,4-5 hours,"Flask, reportlab or wkhtmltopdf, plotly",report_generator.py; Report_Template.html; Visualization_Functions.py,3.5 Add Results Report & Visualizations
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,3.5.1 Create printable PDF report generation
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,3.5.2 Include in report:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - Patient inputs
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - AABPI category + description
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - 10-year CVD risk (with comparison to avg)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - BP target & medication recommendations
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - Risk visualization (traffic light)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - Educational text about albuminuria
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,3.5.3 Create data visualization (matplotlib/plotly):
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - Risk surface for patient's risk profile
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,       - Gauge chart showing patient risk vs. low/high
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),14,3.5 Add Results Report & Visualizations,SUBTASK,,,,"3.5.4 Add share button (email, SMS, social media)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,MAIN TASK,3-4 hours,"HTML, Markdown",about.html; learn.html; disclaimer.html; privacy.html; User_Guide.pdf,3.6 Add Educational Content & Info Pages
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,3.6.1 Create /about page:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,       - What is AAHRC?
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,       - How does it work?
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,       - Scientific background (condensed)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,3.6.2 Create /learn page:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,       - Why albuminuria matters
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,       - How is it measured?
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,       - Why not just BP?
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,       - FAQ section
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,3.6.3 Create /disclaimer & /privacy pages
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,3.6.4 Add references with links to key papers
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.6 Add Educational Content & Info Pages,SUBTASK,,,,3.6.5 Create user guide (short PDF)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),MAIN TASK,4-5 hours,"pytest, Selenium (optional)",Test_Results_Report.md; Bug_Log.csv; QA_Checklist_Completed.txt,3.7 Testing & Quality Assurance (QA)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,3.7.1 Unit tests for calculation functions:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,       - Test AABPI categorization logic
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,       - Test risk calculations
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,"       - Test edge cases (age 18 vs. 90, SBP extremes)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,3.7.2 Integration tests:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,       - Test form submission → calculation → results display
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,3.7.3 UI/UX testing:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,"       - Test on Chrome, Firefox, Safari"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,"       - Test on mobile (iPhone, Android)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,       - Test accessibility (screen readers)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,3.7.4 Security testing:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,"       - Input validation (prevent SQL injection, XSS)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,       - Check no sensitive data in logs
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),15,3.7 Testing & Quality Assurance (QA),SUBTASK,,,,       - HTTPS requirement
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),MAIN TASK,2-3 hours,"Heroku/Railway/Replit CLI, Git",requirements.txt; Procfile; Live_App_URL.txt,3.8 Deploy to Cloud (Free Tier)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,3.8.1 Choose free hosting platform:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,"       Option 1: Heroku (easy, free tier ending 2024)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,"       Option 2: Railway.app (free tier, 5$/month credit)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,"       Option 3: Replit (easy, can host simple Flask apps)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,       Option 4: GitHub Pages + serverless (advanced)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,3.8.2 Create requirements.txt with all dependencies
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,3.8.3 Create Procfile (for Heroku) or equivalent
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,3.8.4 Deploy app to chosen platform
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,3.8.5 Test live app: aahrc-calculator.herokuapp.com (or equivalent)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.8 Deploy to Cloud (Free Tier),SUBTASK,,,,"3.8.6 Set up custom domain if possible (optional, may need small fee)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,MAIN TASK,2-3 hours,Markdown,README.md; DEPLOYMENT.md; CONTRIBUTING.md; CHANGELOG.md,3.9 Create Documentation & README
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,3.9.1 Update main README.md with:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,       - Project description
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,       - Live app link
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,       - How to use the calculator
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,       - Installation (for local development)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,       - Model citations & references
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,3.9.2 Create DEPLOYMENT.md for future maintenance
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,3.9.3 Create CONTRIBUTING.md for collaborators
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,3.9.4 Create CHANGELOG.md documenting all changes
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.9 Create Documentation & README,SUBTASK,,,,"3.9.5 Add badges to README (build status, license, citation count)"
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,MAIN TASK,2-3 hours,"Screen capture software (OBS, Camtasia), YouTube",Demo_Video_Link.txt; Screenshots/; Captions.vtt,3.10 Create Demo Video & Screen Recording
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,3.10.1 Record short demo video (3-5 min) showing:
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,       - How to use the calculator
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,       - Example patient inputs
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,       - Results interpretation
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,       - Risk visualization
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,3.10.2 Upload to YouTube (unlisted link for privacy)
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,3.10.3 Create static screenshots for README
+PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),16,3.10 Create Demo Video & Screen Recording,SUBTASK,,,,3.10.4 Add captions for accessibility
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,MAIN TASK,2-3 hours,Python (sklearn.model_selection),Test_Set_Performance_Metrics.csv,4.1 Prepare Test/Validation Set
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,SUBTASK,,,,4.1.1 Use 70/30 or 80/20 split of NHANES data:
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,SUBTASK,,,,       - 70-80% for model development (already done)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,SUBTASK,,,,       - 20-30% held out for validation (test set)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,SUBTASK,,,,4.1.2 Ensure stratified split (maintain category distribution)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,SUBTASK,,,,4.1.3 Verify no data leakage
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,SUBTASK,,,,4.1.4 Apply final model to test set
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.1 Prepare Test/Validation Set,SUBTASK,,,,4.1.5 Calculate performance metrics on test set (not training set!)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.2 External Validation (If SPRINT/UK Biobank Available),MAIN TASK,4-5 hours,"Python (lifelines, matplotlib)",External_Validation_Results.csv; Calibration_Plot.png,4.2 External Validation (If SPRINT/UK Biobank Available)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.2 External Validation (If SPRINT/UK Biobank Available),SUBTASK,,,,4.2.1 Apply AAHRC model to SPRINT cohort
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.2 External Validation (If SPRINT/UK Biobank Available),SUBTASK,,,,4.2.2 Calculate C-statistic on SPRINT (independent cohort)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.2 External Validation (If SPRINT/UK Biobank Available),SUBTASK,,,,4.2.3 Create calibration plot: predicted vs. observed risk
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.2 External Validation (If SPRINT/UK Biobank Available),SUBTASK,,,,"4.2.4 Calculate calibration-in-the-large (intercept, slope)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.2 External Validation (If SPRINT/UK Biobank Available),SUBTASK,,,,4.2.5 Document any performance differences between NHANES & SPRINT
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),17,4.2 External Validation (If SPRINT/UK Biobank Available),SUBTASK,,,,4.2.6 Assess if model needs recalibration
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),MAIN TASK,8-10 hours,"Google Docs, Overleaf (LaTeX)",Manuscript_Draft_Methods_Results.docx/pdf,4.3 Start Manuscript Writing (Methods & Results)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,4.3.1 Create manuscript outline in Google Docs or Overleaf
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,4.3.2 Write Methods section (3-4 pages):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Study design & population
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Variable definitions
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - AABPI formula development
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Statistical methods
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Model evaluation
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,4.3.3 Write Results section (3-4 pages):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Table 1: Baseline characteristics by category
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Model performance (C-statistics)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Subgroup analyses
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,       - Reclassification analysis
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,4.3.4 Create all tables & figures for manuscript
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),18,4.3 Start Manuscript Writing (Methods & Results),SUBTASK,,,,4.3.5 Use standard formatting (AMA or journal style)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,MAIN TASK,8-10 hours,"Google Docs, Overleaf, PubMed/Zotero for citations",Manuscript_Full_Draft.docx/pdf; Abstract.txt,4.4 Write Introduction & Discussion
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,4.4.1 Write Introduction (2-3 pages):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Hypertension epidemiology & burden
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Current BP-only definition limitations
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Role of albuminuria
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Gap in personalized hypertension assessment
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Study aims
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,4.4.2 Write Discussion (3-4 pages):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Interpretation of main findings
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,"       - Comparison to PREVENT, ASCVD risk calculator"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Clinical implications
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Strengths & limitations
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,       - Future directions
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,4.4.3 Write Abstract (250 words):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,"       - Background, Methods, Results, Conclusions format"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.4 Write Introduction & Discussion,SUBTASK,,,,4.4.4 Add References (~50-80 citations)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,MAIN TASK,4-5 hours,"Google Docs comments, Grammarly",Manuscript_Rev1.docx/pdf; Reviewer_Comments.txt,4.5 Internal Review & Revision
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,4.5.1 Self-review checklist:
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,       - All figures referenced in text?
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,       - All numbers/statistics accurate?
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,       - Formatting consistent?
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,       - Grammar & spelling check
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,4.5.2 Share manuscript with mentor/statistician for feedback
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,4.5.3 Incorporate feedback
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),19,4.5 Internal Review & Revision,SUBTASK,,,,4.5.4 Create clean version (Revision 1)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,MAIN TASK,3-4 hours,Word/Google Docs,Formatted_Manuscript.pdf; Cover_Letter.docx; Highlights.txt,4.6 Select Target Journal & Prepare Submission
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,4.6.1 Decide target journal (priority order):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,"       1. JAMA Network Open (high impact, open access)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,"       2. Hypertension (AHA, strong reputation)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,       3. American Journal of Hypertension
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,       4. BMJ Quality & Safety (if emphasizing QI)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,"4.6.2 Review journal author instructions (word limit, format, references)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,4.6.3 Prepare submission package:
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,       - Manuscript (formatted per journal)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,"       - Cover letter (1 page, highlighting novelty & impact)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,       - Highlights (3-4 bullet points for many journals)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,       - Suggested reviewers (2-3 names + emails)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,4.6.4 Create author contributions & acknowledgments section
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.6 Select Target Journal & Prepare Submission,SUBTASK,,,,4.6.5 Verify ORCID for all authors
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.7 Submit Manuscript to Journal #1,MAIN TASK,1-2 hours,Journal website,Submission_Confirmation_Email.pdf; Manuscript_ID.txt,4.7 Submit Manuscript to Journal #1
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.7 Submit Manuscript to Journal #1,SUBTASK,,,,4.7.1 Create account on journal submission portal
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.7 Submit Manuscript to Journal #1,SUBTASK,,,,4.7.2 Upload manuscript + supplementary materials
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.7 Submit Manuscript to Journal #1,SUBTASK,,,,4.7.3 Complete author & conflict of interest declarations
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.7 Submit Manuscript to Journal #1,SUBTASK,,,,4.7.4 Submit (likely takes 1-3 min per journal system)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.7 Submit Manuscript to Journal #1,SUBTASK,,,,4.7.5 Receive confirmation email with manuscript ID
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),20,4.7 Submit Manuscript to Journal #1,SUBTASK,,,,"4.7.6 Document submission (date, journal, ID)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,MAIN TASK,3-4 hours,Word/Google Docs,AHA_Abstract.txt; ASN_Abstract.txt; Conference_Timeline.md,4.8 Prepare Conference Abstracts
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,4.8.1 Target conferences (in order of priority):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,"       1. American Heart Association Scientific Sessions (Nov, submission Aug)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,"       2. ASN Kidney Week (Nov, submission deadline varies)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,"       3. ACC/AHA Annual Meeting (Mar, submission Dec)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,4.8.2 Check submission deadlines and requirements
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,4.8.3 Write abstract for each (250-300 words):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,"       - Background, Methods, Results, Conclusions"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,       - Highlight novel findings
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,       - Include preliminary data or results
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.8 Prepare Conference Abstracts,SUBTASK,,,,4.8.4 Check current submission deadlines & adjust
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,MAIN TASK,1-2 hours,Conference websites,AHA_Submission_Confirmation.pdf; ASN_Submission_Confirmation.pdf,4.9 Submit Conference Abstracts
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,4.9.1 AHA submission (if deadline not passed):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,       - Go to professional.heart.org → Scientific Sessions
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,"       - Create account, submit abstract"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,       - Track submission with confirmation email
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,4.9.2 ASN submission (if applicable):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,       - Go to asn-online.org → Kidney Week
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,       - Submit abstract
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),21,4.9 Submit Conference Abstracts,SUBTASK,,,,4.9.3 Document submissions with IDs
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),MAIN TASK,4-5 hours,PowerPoint,AAHRC_Presentation.pptx; Speaker_Notes.docx,4.10 Create Presentation Slides (If Abstract Accepted)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,4.10.1 Create PowerPoint deck (15-20 slides for scientific presentation):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       1. Title slide
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,"       2-3. Background (problem, gap, hypothesis)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       4-5. Methods
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       6-8. Results (key tables/figures)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       9-10. Comparison to existing tools
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       11-12. Implications & clinical applications
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       13. Limitations
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       14. Conclusions
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,       15. Next steps
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,4.10.2 Design with consistent branding
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,4.10.3 Practice presentation (aim for 12-15 min + 3-5 min questions)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),22,4.10 Create Presentation Slides (If Abstract Accepted),SUBTASK,,,,4.10.4 Create speaker notes for each slide
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),MAIN TASK,2-3 hours,Email,Revision_Strategy_Plan.txt,4.11 Prepare for Journal Peer Review (Manuscript Revision)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,4.11.1 Journal will send editor decision in 4-8 weeks (likely)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,4.11.2 Expected outcomes:
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,       a) Accept (rare on first submission)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,       b) Minor revisions (moderate revisions + resubmit)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,       c) Major revisions (substantial revisions + resubmit + re-review)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,       d) Reject & resubmit to next journal
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,"4.11.2 In meantime, prepare revision strategy:"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,       - Identify any weaknesses likely to be critiqued
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,       - Add additional analyses if needed
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,       - Prepare responses to likely comments
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.11 Prepare for Journal Peer Review (Manuscript Revision),SUBTASK,,,,4.11.3 Check email regularly for editor decision
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,MAIN TASK,4-5 hours,"Word, GitHub, Plotly",Supplementary_Materials.pdf; GitHub_repo; Interactive_Supplement.html,4.12 Create Supplementary Materials & Appendices
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,4.12.1 Online supplementary document with:
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Extended methods (additional statistical details)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Supplementary tables (all subgroup analyses)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,"       - Supplementary figures (ROC curves, calibration plots)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Sensitivity analysis results
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - STROBE checklist (for observational study)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,4.12.2 Code repository (GitHub):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Analysis code (de-identified)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Model coefficients
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Data dictionary
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - README for reproducibility
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,4.12.3 Interactive data visualization (online supplement)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Risk calculator in HTML format
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),23,4.12 Create Supplementary Materials & Appendices,SUBTASK,,,,       - Risk surface 3D plot
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,MAIN TASK,4-5 hours,"Word/LaTeX, GitHub",Final_Project_Report.pdf; Project_Summary.docx; Lessons_Learned.txt,4.13 Final Documentation & Project Completion
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,4.13.1 Create final project report (20-30 pages):
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,       - Project overview
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,       - Data sources & methods
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,       - Key findings
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,       - Calculator description
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,       - Future directions
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,       - All tables & figures
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,4.13.2 Update GitHub with all final code & documentation
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,4.13.3 Create project summary for presentation (1-2 pages)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,4.13.4 Document lessons learned & recommendations
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.13 Final Documentation & Project Completion,SUBTASK,,,,"4.13.5 Archive all project files (GitHub, institutional storage)"
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,MAIN TASK,3-4 hours,"Email, Word/Google Docs",Dissemination_Plan.md; Phase2_Study_Proposal.docx,4.14 Plan Next Steps & Dissemination
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,4.14.1 If manuscript accepted:
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,       - Prepare press release (university communications)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,       - Contact media (health reporters)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,       - Create social media announcement
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,       - Alert key opinion leaders
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,4.14.2 Plan Phase 2 validation study (prospective or multi-site)
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,4.14.3 Reach out to Epic/EHR vendors about integration
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,4.14.4 Create lay-person educational materials
+PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),24,4.14 Plan Next Steps & Dissemination,SUBTASK,,,,4.14.5 Plan national presentation tour (if funding available)

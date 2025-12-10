@@ -1,0 +1,6 @@
+Category,Hours_Per_Week,Phases,Tools
+Data Science,10-15,"1,2,4","Python, Jupyter, scikit-learn"
+Software Development,8-12,3,"Flask, JavaScript, HTML/CSS"
+Statistical Analysis,8-10,"2,4","R/Python, lifelines, matplotlib"
+Writing/Documentation,5-8,"1,4","Word/LaTeX, Markdown, Git"
+Project Management,3-5,"1,2,3,4","GitHub, Slack, Excel"

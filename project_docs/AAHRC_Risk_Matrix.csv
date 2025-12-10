@@ -1,0 +1,6 @@
+Risk_ID,Risk_Title,Probability,Impact,Phase,Mitigation_Strategy,Owner
+R1,Data access delays (SPRINT/UK Biobank),Medium,High,Phase 1-2,Proceed with NHANES-only; add validation later,Project Lead
+R2,Poor model performance (C-stat <0.60),Low,High,Phase 2,Add interaction terms; test non-linear relationships,Data Scientist
+R3,Web deployment issues,Low,Medium,Phase 3,Deploy to multiple platforms; maintain GitHub backup,Developer
+R4,Manuscript rejection,Medium,Medium,Phase 4,Plan revision for lower-tier journal; +8 weeks timeline,Lead Author
+R5,Time constraints,High,Medium,All,Prioritize Phase 1-2; submit preprint while reviewing,Project Manager

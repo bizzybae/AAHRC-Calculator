@@ -1,0 +1,95 @@
+
+WEEK 1 QUICK REFERENCE: COMMAND CHEAT SHEET
+════════════════════════════════════════════════════════════════════════════
+
+GITHUB SETUP (Monday)
+─────────────────────────────────────────────────────────────────────────────
+# Clone repository
+git clone https://github.com/[YOUR-USERNAME]/AAHRC-Calculator.git
+cd AAHRC-Calculator
+
+# Create folder structure
+mkdir -p data/{raw,processed} analysis/{notebooks,scripts} models results/{figures,tables} app/{templates,static/{css,js}} docs
+
+# Configure git
+git config user.name "Your Name"
+git config user.email "your@email.com"
+
+# First commit
+git add .
+git commit -m "Initial setup: folder structure"
+git push origin main
+
+
+PYTHON ENVIRONMENT (Monday)
+─────────────────────────────────────────────────────────────────────────────
+# Create virtual environment
+python3 -m venv venv
+
+# Activate (macOS/Linux)
+source venv/bin/activate
+
+# Activate (Windows)
+venv\Scripts\activate
+
+# Install packages
+pip install -r requirements.txt
+
+# Test installation
+python3 -c "import pandas, numpy, sklearn; print('OK')"
+
+# Start Jupyter
+jupyter lab analysis/notebooks/
+
+
+DATA PROCESSING (Wednesday-Thursday)
+─────────────────────────────────────────────────────────────────────────────
+# Download NHANES
+# 1. Go to: wwwn.cdc.gov/nchs/nhanes/
+# 2. Download 2017-2020 cycle:
+#    - ALB_CR_H.XPT (albumin)
+#    - BPX_H.XPT (blood pressure)
+#    - DEMO_H.XPT (demographics)
+# 3. Save to: data/raw/
+
+# Convert and merge
+python3 analysis/scripts/01_load_nhanes.py
+
+# Verify data
+python3 analysis/scripts/02_verify_data.py
+
+# Open Jupyter for EDA
+jupyter lab analysis/notebooks/01_exploratory_data_analysis.ipynb
+
+
+GIT WORKFLOW (Throughout Week)
+─────────────────────────────────────────────────────────────────────────────
+# Check status
+git status
+
+# View changes
+git diff
+
+# Add files
+git add analysis/notebooks/
+git add docs/
+git add results/
+
+# Review before commit
+git status
+
+# Commit
+git commit -m "Week 1: [Your message]
+- Line 1: Summary
+- Lines 2+: Details
+- Reference issues with #123"
+
+# Push to GitHub
+git push origin main
+
+# View commit history
+git log --oneline -5
+
+# Create backup branch (optional, before major changes)
+git branch backup-week1
+git push origin backup-week1

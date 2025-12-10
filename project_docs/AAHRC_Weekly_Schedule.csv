@@ -1,0 +1,47 @@
+Week,Phase,Main_Task,Estimated_Hours,Priority,Key_Deliverables,Tools_Needed
+1,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.1 Environment Setup,2-3 hours,MEDIUM,2,"GitHub, Python, Conda/pip"
+1,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.2 Literature Review (Rapid),4-5 hours,MEDIUM,2,"PubMed, Google Scholar"
+2,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.3 Download & Explore NHANES Data,3-4 hours,MEDIUM,2,"Python (pandas, pyreadstat), R (haven)"
+2,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.4 Initial Data Exploration (EDA),4-5 hours,MEDIUM,2,"Python (pandas, seaborn, matplotlib)"
+2,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.5 Data Cleaning & Preprocessing,3-4 hours,MEDIUM,2,Python (pandas)
+3,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.6 Create AABPI Categories,2-3 hours,MEDIUM,2,"Python (pandas, matplotlib)"
+3,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.7 Descriptive Analysis by Category,3-4 hours,MEDIUM,2,"Python (pandas, scipy.stats)"
+4,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.8 Submit SPRINT Data Request,1-2 hours,MEDIUM,2,Web browser
+4,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.9 Apply for UK Biobank Access (Optional),2-3 hours,MEDIUM,2,"Web browser, Word/Google Docs"
+4,PHASE 1: SETUP & DATA ACQUISITION (Weeks 1-4),1.10 Weekly Check-in & Documentation,1-2 hours,MEDIUM,3,"GitHub, Markdown"
+5,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.1 Simulate CVD Outcomes for NHANES,3-4 hours,MEDIUM,2,"Python (pandas, numpy)"
+5,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.2 Develop Categorical AABPI (Formula 1),3-4 hours,MEDIUM,2,"Python (scikit-learn, statsmodels)"
+5,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.3 Develop Ratio Method AABPI (Formula 2),3-4 hours,MEDIUM,2,"Python (scikit-learn, matplotlib)"
+6,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.4 Develop Regression-Based AABPI (Formula 3),4-5 hours,MEDIUM,2,"Python (statsmodels, matplotlib)"
+6,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.5 Compare Three AABPI Formulas,4-5 hours,MEDIUM,3,Python (sklearn.metrics)
+7,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.6 Prepare for SPRINT Data Integration,2-3 hours,MEDIUM,2,Python (pandas)
+7,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.7 Analyze SPRINT Data (if available),5-6 hours (if SPRINT data available),HIGH,2,Python (lifelines)
+8,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.8 Sensitivity & Subgroup Analyses,5-6 hours,HIGH,2,"Python (matplotlib, pandas)"
+9,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.9 Risk Visualization & Heat Maps,4-5 hours,MEDIUM,3,"Python (matplotlib, plotly)"
+10,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.10 Compare to Existing Tools (PREVENT),4-5 hours,MEDIUM,3,"Python (requests, pandas)"
+11,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.11 Create Reclassification Analysis Table,3-4 hours,MEDIUM,2,Python (pandas)
+12,PHASE 2: STATISTICAL MODELING (Weeks 5-12),2.12 Final Model Selection & Documentation,3-4 hours,MEDIUM,3,"Python, Markdown"
+13,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.1 Design Calculator Interface (Mockup),3-4 hours,MEDIUM,2,"Figma, paper & pen, or Excalidraw"
+13,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.2 Build Backend (Flask/Python),5-6 hours,HIGH,4,"Python, Flask, pytest"
+13,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.3 Build Frontend (HTML/CSS/JavaScript),5-6 hours,HIGH,5,"HTML, CSS, JavaScript"
+14,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.4 Integrate Backend & Frontend,4-5 hours,MEDIUM,2,"Flask, JavaScript, Browser DevTools"
+14,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.5 Add Results Report & Visualizations,4-5 hours,MEDIUM,3,"Flask, reportlab or wkhtmltopdf, plotly"
+15,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.6 Add Educational Content & Info Pages,3-4 hours,MEDIUM,5,"HTML, Markdown"
+15,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.7 Testing & Quality Assurance (QA),4-5 hours,MEDIUM,3,"pytest, Selenium (optional)"
+16,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.8 Deploy to Cloud (Free Tier),2-3 hours,MEDIUM,3,"Heroku/Railway/Replit CLI, Git"
+16,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.9 Create Documentation & README,2-3 hours,MEDIUM,4,Markdown
+16,PHASE 3: WEB CALCULATOR DEVELOPMENT (Weeks 13-16),3.10 Create Demo Video & Screen Recording,2-3 hours,MEDIUM,3,"Screen capture software (OBS, Camtasia), YouTube"
+17,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.1 Prepare Test/Validation Set,2-3 hours,MEDIUM,1,Python (sklearn.model_selection)
+17,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.2 External Validation (If SPRINT/UK Biobank Available),4-5 hours,MEDIUM,2,"Python (lifelines, matplotlib)"
+18,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.3 Start Manuscript Writing (Methods & Results),8-10 hours,HIGH,1,"Google Docs, Overleaf (LaTeX)"
+19,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.4 Write Introduction & Discussion,8-10 hours,HIGH,2,"Google Docs, Overleaf, PubMed/Zotero for citations"
+19,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.5 Internal Review & Revision,4-5 hours,MEDIUM,2,"Google Docs comments, Grammarly"
+20,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.6 Select Target Journal & Prepare Submission,3-4 hours,MEDIUM,3,Word/Google Docs
+20,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.7 Submit Manuscript to Journal #1,1-2 hours,MEDIUM,2,Journal website
+21,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.8 Prepare Conference Abstracts,3-4 hours,MEDIUM,3,Word/Google Docs
+21,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.9 Submit Conference Abstracts,1-2 hours,MEDIUM,2,Conference websites
+22,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.10 Create Presentation Slides (If Abstract Accepted),4-5 hours,MEDIUM,2,PowerPoint
+23,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.11 Prepare for Journal Peer Review (Manuscript Revision),2-3 hours,MEDIUM,1,Email
+23,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.12 Create Supplementary Materials & Appendices,4-5 hours,MEDIUM,3,"Word, GitHub, Plotly"
+24,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.13 Final Documentation & Project Completion,4-5 hours,MEDIUM,3,"Word/LaTeX, GitHub"
+24,PHASE 4: VALIDATION & PUBLICATION (Weeks 17-24),4.14 Plan Next Steps & Dissemination,3-4 hours,MEDIUM,2,"Email, Word/Google Docs"

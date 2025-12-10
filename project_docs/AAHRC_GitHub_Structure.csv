@@ -1,0 +1,35 @@
+Folder,File,Description,Type
+root,README.md,"Project overview, quick start",Config/Doc
+root,CONTRIBUTING.md,How to contribute,Config/Doc
+root,LICENSE,MIT or CC-BY-4.0,Config/Doc
+root,.gitignore,"Exclude /data, /models, .DS_Store",Config/Doc
+root,requirements.txt,Python dependencies,Config/Doc
+root,CHANGELOG.md,Version history,Config/Doc
+data/,raw/,"Original NHANES, SPRINT downloads",Data
+data/,processed/,"Cleaned, merged datasets",Data
+data/,README.md,Data dictionary and sources,Data
+analysis/,01_eda.ipynb,Exploratory data analysis,Config/Doc
+analysis/,02_preprocessing.ipynb,Data cleaning,Config/Doc
+analysis/,03_model_development.ipynb,AABPI formula development,Config/Doc
+analysis/,04_model_comparison.ipynb,Compare three formulas,Config/Doc
+analysis/,05_external_validation.ipynb,SPRINT/UK Biobank validation,Config/Doc
+analysis/,06_subgroup_analysis.ipynb,Age/sex/diabetes subgroups,Config/Doc
+analysis/,README.md,Analysis workflow,Config/Doc
+models/,aabpi_categorical.pkl,Saved categorical model,Config/Doc
+models/,aabpi_ratio.pkl,Saved ratio model,Config/Doc
+models/,aabpi_regression.pkl,Saved regression model,Config/Doc
+models/,model_coefficients.csv,All model parameters,Config/Doc
+app/,app.py,Flask main application,Code
+app/,models.py,AABPI calculation functions,Code
+app/,utils.py,Helper functions,Code
+app/,requirements.txt,App-specific dependencies,Config/Doc
+app/,templates/,HTML templates,Config/Doc
+app/,static/,"CSS, JavaScript, images",Config/Doc
+app/,Procfile,Heroku deployment config,Config/Doc
+app/,README.md,How to run locally,Config/Doc
+results/,figures/,All plots and visualizations,Config/Doc
+results/,tables/,Summary statistics tables,Config/Doc
+results/,reports/,Analysis reports (PDF/HTML),Config/Doc
+docs/,METHODOLOGY.md,Detailed methods,Config/Doc
+docs/,DATA_DICTIONARY.md,Variable definitions,Config/Doc
+docs/,API.md,Calculator API documentation,Config/Doc

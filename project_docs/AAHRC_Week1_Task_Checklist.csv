@@ -1,0 +1,14 @@
+Day,Task,Time,Status,Critical,Deliverable
+Monday,1.1.1 Create GitHub Account,15-30 min,Not Started,YES,GitHub account with token
+Monday,1.1.2 Create Repository,10-15 min,Not Started,YES,AAHRC-Calculator repo
+Monday,1.1.3 Clone Repository,5 min,Not Started,YES,Local git directory
+Monday,1.1.4-5 Create Folder Structure & Configure .gitignore,15 min,Not Started,YES,Project folder structure
+Monday Afternoon,1.1.6-7 Install Python & Virtual Environment,10 min,Not Started,YES,Python 3.10+ venv ready
+Monday Afternoon,1.1.8-9 Install Packages & Test Jupyter,15 min,Not Started,YES,All packages installed
+Monday Afternoon,"1.1.10-12 Create README, CHANGELOG, First Commit",20 min,Not Started,YES,Initial GitHub commit
+Tuesday,1.2.1-2 Literature Review: Find Papers & Extract Data,4 hours,Not Started,NO,Literature_Key_Data.xlsx
+Tuesday,1.2.3-4 Document Risk Estimates & Create Summary,2 hours,Not Started,NO,Baseline_Risk_Estimates.txt
+Wednesday,1.3.1-2 Download NHANES & Convert to CSV,3 hours,Not Started,YES,nhanes_raw.csv (50 MB)
+Wednesday,1.3.3 Verify Data Integrity,1 hour,Not Started,YES,Data verification report
+Thursday,1.4.1-5 Create Jupyter EDA Notebook,6 hours,Not Started,NO,01_exploratory_data_analysis.ipynb
+Friday,1.4.6-10 Finalize & Commit to GitHub,3 hours,Not Started,NO,Week 1 complete
