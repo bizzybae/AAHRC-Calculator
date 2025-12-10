@@ -1,2 +1,227 @@
 # AAHRC-Calculator
-Albuminuria-Adjusted Hypertension Risk Calculator - A tool for personalizing blood pressure targets by kidney function. Predicts 10-year CVD risk using BP and urine albumin-creatinine ratio.
+
+**Albuminuria-Adjusted Hypertension Risk Calculator**
+
+A comprehensive tool for personalizing blood pressure targets by kidney function. Predicts 10-year cardiovascular disease risk using blood pressure and urine albumin-creatinine ratio.
+
+## 🎯 Project Overview
+
+### Executive Summary
+This project develops the **Albuminuria-Adjusted Hypertension Risk Calculator (AAHRC)**, a novel clinical decision support tool that personalizes blood pressure management based on kidney function. Just as BMI adjusts weight interpretation based on height, AAHRC adjusts blood pressure interpretation based on albuminuria.
+
+### The Clinical Problem
+- Only **4.1%** of hypertensive patients are screened for albuminuria
+- **40%** of untreated hypertensive patients have undetected albuminuria
+- Current guidelines provide one-size-fits-all BP targets
+- Two patients with identical BP (145/90) but different uACR (10 vs 250 mg/g) receive the same diagnosis despite different cardiovascular risk
+
+### The Solution
+AAHRC creates 4 distinct phenotypes:
+1. **Normal BP + Normal Albuminuria** → True normotension (lowest risk)
+2. **Elevated BP + Normal Albuminuria** → Isolated BP elevation (intermediate risk)
+3. **Normal BP + Elevated Albuminuria** → Occult hypertension (high risk, often missed)
+4. **Elevated BP + Elevated Albuminuria** → True hypertension with organ damage (highest risk)
+
+## 📊 Project Metrics
+
+- **Timeline**: 24 weeks (6 months)
+- **Budget**: $0-500 (all free/open-source tools)
+- **Tasks**: 46 main tasks, 433 subtasks
+- **Deliverables**: 112 tracked items
+- **Time Investment**: 210-270 hours (35-45 hrs/week)
+
+## 🗂️ Repository Structure
+
+```
+AAHRC-Calculator/
+├── data/                    # NHANES and other public datasets
+│   ├── raw/
+│   ├── processed/
+│   └── external/
+├── notebooks/               # Jupyter notebooks for analysis
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_model_development.ipynb
+│   └── 03_validation.ipynb
+├── src/                     # Source code
+│   ├── data/               # Data processing scripts
+│   ├── features/           # Feature engineering
+│   ├── models/             # Model training and prediction
+│   └── visualization/      # Plotting utilities
+├── app/                     # Web calculator application
+│   ├── static/             # CSS, JS, images
+│   ├── templates/          # HTML templates
+│   └── app.py              # Flask application
+├── tests/                   # Unit and integration tests
+├── docs/                    # Documentation
+├── results/                 # Model outputs, figures, tables
+└── requirements.txt         # Python dependencies
+```
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.10+
+- Git
+- Virtual environment tool (venv, conda)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/bizzybae/AAHRC-Calculator.git
+cd AAHRC-Calculator
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Week 1: Get Started
+
+1. **Download NHANES Data**
+   ```bash
+   # Navigate to CDC NHANES website
+   # Download 2017-2020 cycle:
+   # - ALB_CR_H.XPT (albuminuria)
+   # - BPX_H.XPT (blood pressure)
+   # - DEMO_H.XPT (demographics)
+   ```
+
+2. **Run Initial Analysis**
+   ```bash
+   jupyter notebook notebooks/01_data_exploration.ipynb
+   ```
+
+## 📈 Development Phases
+
+### Phase 1: Setup & Data Acquisition (Weeks 1-4)
+- ✓ GitHub repository setup
+- ✓ Python environment configuration
+- □ NHANES data download and processing
+- □ Exploratory data analysis
+- □ Literature review completion
+
+### Phase 2: Statistical Modeling (Weeks 5-12)
+- □ Develop 3 AABPI formulas (categorical, ratio, regression-based)
+- □ Cox proportional hazards models
+- □ Model comparison and selection
+- □ External validation
+- □ Subgroup analyses
+
+### Phase 3: Web Calculator Development (Weeks 13-16)
+- □ Flask backend development
+- □ Frontend UI/UX design
+- □ Risk visualization tools
+- □ Deployment to cloud platform
+- □ User testing and QA
+
+### Phase 4: Validation & Publication (Weeks 17-24)
+- □ Manuscript writing
+- □ Conference abstract submission
+- □ Documentation completion
+- □ Community outreach
+- □ Phase 2 planning (prospective validation)
+
+## 🔬 Scientific Background
+
+### Supporting Evidence
+- **PREVENT equations (2024)**: Already include uACR as optional predictor
+- **SPRINT trial**: Albuminuria modifies BP treatment benefit
+- **NHANES data**: Continuous BP-albuminuria-CVD relationship (30,000+ participants)
+- **ESC/AHA guidelines**: Different BP targets recommended by albuminuria status
+
+### Key Findings from Literature
+- Each 5 mg/g increase in uACR → 1.31× increase in hypertension prevalence
+- Each doubling of uACR → 11% increase in cardiovascular events
+- 53.5% of patients with severe albuminuria not on guideline-recommended therapy
+- Ratio of undetected to detected albuminuria in hypertension: **19.5:1**
+
+## 📊 Publicly Available Datasets
+
+### Primary Dataset: NHANES
+- **Size**: 30,000+ participants
+- **Variables**: BP, uACR, demographics, outcomes
+- **Access**: Free, no authentication required
+- **Download**: [CDC NHANES](https://wwwn.cdc.gov/nchs/nhanes/)
+
+### Validation Datasets
+1. **SPRINT**: 9,361 participants, hard CVD outcomes (requires application)
+2. **UK Biobank**: 456,000+ with uACR, 10-year follow-up
+3. **ACCORD-BP**: Diabetes subgroup, albuminuria-rich cohort
+4. **CKD-PC**: Meta-analysis dataset, 2+ million participants
+
+## 🛠️ Technology Stack
+
+- **Language**: Python 3.10+
+- **Data Analysis**: pandas, numpy, scipy
+- **Machine Learning**: scikit-learn, lifelines (survival analysis)
+- **Visualization**: matplotlib, seaborn, plotly
+- **Web Framework**: Flask
+- **Frontend**: HTML/CSS/JavaScript, Bootstrap
+- **Deployment**: Heroku/Render (free tier)
+- **Version Control**: Git/GitHub
+
+## 📝 Documentation
+
+Detailed documentation available in `/docs` directory:
+- [Quick-Start Guide](docs/AAHRC_Quick-Start_Guide.md)
+- [Comprehensive Algorithm](docs/AAHRC_Comprehensive_Algorithm.csv)
+- [Week 1 Task Checklist](docs/AAHRC_Week1_Task_Checklist.csv)
+- [Project Status Tracker](docs/AAHRC_Project_Status_Tracker.csv)
+
+## 🤝 Contributing
+
+Contributions welcome! Please:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📧 Contact
+
+**Project Lead**: [Your Name]
+- GitHub: [@bizzybae](https://github.com/bizzybae)
+- Email: [Your Email]
+
+## 🙏 Acknowledgments
+
+- CDC NHANES for public data access
+- NHLBI BioLINCC for SPRINT/ACCORD data
+- AHA/ACC for PREVENT equations framework
+- Open-source community for tools and libraries
+
+## 📚 Citation
+
+If you use this tool in your research, please cite:
+
+```bibtex
+@software{aahrc2025,
+  author = {[Your Name]},
+  title = {AAHRC-Calculator: Albuminuria-Adjusted Hypertension Risk Calculator},
+  year = {2025},
+  url = {https://github.com/bizzybae/AAHRC-Calculator}
+}
+```
+
+## 🎯 Project Milestones
+
+- [x] Repository creation and initial setup
+- [ ] Week 1: Environment setup and literature review
+- [ ] Week 4: NHANES data processing complete
+- [ ] Week 12: Statistical models developed and validated
+- [ ] Week 16: Web calculator deployed
+- [ ] Week 24: Manuscript submitted for publication
+
+---
+
+**Status**: 🚧 Active Development  
+**Last Updated**: December 9, 2025  
+**Version**: 0.1.0 (Initial Setup)
